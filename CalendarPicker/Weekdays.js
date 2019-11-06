@@ -15,39 +15,44 @@ export default function Weekdays(props) {
 
   return (
     <View
-      style={[
-        styles.dayLabelsWrapper,
-        {
-          paddingTop: 27,
-          marginBottom: 20,
-          borderTopWidth: 0,
-          borderBottomWidth: 0.25,
-          borderBottomColor: theme.textWeekdayColor,
-        }
-      ]}
+      style={{
+        paddingTop: 27,
+      }}
     >
-      { wd.map((day, key) => {
-          return (
-            <Text
-              key={key}
-              style={[
-                styles.dayLabels,
-                {
-                  color: theme.textWeekdayColor,
-                  fontFamily: theme.textWeekdayFontFamily,
-                  fontWeight: theme.textWeekdayFontWeight,
-                  fontSize: theme.textWeekdayFontSize,
-                }
-              ]}
-            >
-              {day}
-            </Text>
-          );
-        })
-      }
+      <View style={[styles.dayLabelsWrapper, { borderTopWidth: 0, borderBottomWidth: 0 }]}>
+        { wd.map((day, key) => {
+            return (
+              <Text
+                key={key}
+                style={[
+                  styles.dayLabels,
+                  {
+                    color: theme.textWeekdayColor,
+                    fontFamily: theme.textWeekdayFontFamily,
+                    fontWeight: theme.textWeekdayFontWeight,
+                    fontSize: theme.textWeekdayFontSize,
+                  }
+                ]}
+              >
+                {day}
+              </Text>
+            );
+          })
+        }
+      </View>
+      <View
+        style={[
+          {
+            marginBottom: 20,
+            height: 0.25,
+            width: '92%',
+            backgroundColor: theme.textWeekdayColor,
+            alignSelf: 'center',
+          }
+        ]}
+      />
     </View>
   );
 }
 
 Weekdays.propTypes = {};
-

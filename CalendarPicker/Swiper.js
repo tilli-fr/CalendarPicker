@@ -103,6 +103,16 @@ export default class Swiper extends Component {
 
   render() {
     const { theme } = this.props;
-    return (<View {...this.props} {...this._panResponder.panHandlers} style={{ backgroundColor: theme.calendarBackgroundColor }} />);
+    return (
+      <View
+        {...this.props}
+        {...this._panResponder.panHandlers}
+        style={{
+          backgroundColor: theme.calendarBackgroundColor,
+          borderWidth: theme.calendarBorderWidth,
+          borderColor: theme.calendarBorderColor,
+        }}
+      />
+    );
   }
 }
