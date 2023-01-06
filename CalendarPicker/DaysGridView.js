@@ -3,15 +3,12 @@ import uuid from 'uuid/v4';
 import {
   View,
   Text,
-  ViewPropTypes as RNViewPropTypes,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import Day from './Day';
 import EmptyDay from './EmptyDay';
 import { Utils } from './Utils';
 import moment from 'moment';
-
-const ViewPropTypes = RNViewPropTypes || View.propTypes;
 
 export default function DaysGridView(props) {
   const {
@@ -149,18 +146,18 @@ DaysGridView.propTypes = {
   year: PropTypes.number.isRequired,
   onPressDay: PropTypes.func,
   startFromMonday: PropTypes.bool,
-  selectedDayStyle: ViewPropTypes.style,
-  selectedRangeStartStyle: ViewPropTypes.style,
-  selectedRangeStyle: ViewPropTypes.style,
-  selectedRangeEndStyle: ViewPropTypes.style,
+  selectedDayStyle: PropTypes.any,
+  selectedRangeStartStyle: PropTypes.any,
+  selectedRangeStyle: PropTypes.any,
+  selectedRangeEndStyle: PropTypes.any,
   customDatesStyles: PropTypes.arrayOf(PropTypes.shape({
     date: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.instanceOf(Date),
       PropTypes.instanceOf(moment)
     ]),
-    containerStyle: ViewPropTypes.style,
-    style: ViewPropTypes.style,
+    containerStyle: PropTypes.any,
+    style: PropTypes.any,
   })),
   disabledDates: PropTypes.array,
   minRangeDuration: PropTypes.oneOfType([PropTypes.array, PropTypes.number]),
